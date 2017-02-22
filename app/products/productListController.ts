@@ -3,14 +3,14 @@ module app.productList {
     interface IProductListModule {
         title: string;
         showImage: boolean;
-        products: any[];
+        products: app.domain.IProduct[];
         toggleImage(): void; 
     }
 
     class ProductListController implements IProductListModule {
         title: string;
         showImage: boolean;
-        products: any[];
+        products: app.domain.IProduct[];
 
         constructor() {
             this.title = "Product List";
@@ -43,6 +43,10 @@ module app.productList {
                     "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
                 }
             ];
+            var newProduct = new app.domain.Product(3,"Pila","TPIL-024",new Date(2017,4,4),16.95,"pila za piljenje,velika","http://openclipart.org/image/300px/svg_to_png/27070/egore_saw.png");
+
+            newProduct.price = newProduct.calculateDiscount(10);
+            this.products.push(newProduct);
         }
 
         toggleImage(): void {
