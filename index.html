@@ -18,7 +18,7 @@
     </nav>
 
     <div class="container">
-        <div ng-include="'app/products/productListView.html'"></div>
+        <ng-view></ng-view>
     </div>
 
     <!-- Library Scripts -->
@@ -34,11 +34,13 @@
     <script src="app/products/product.js"></script>
     
     <!-- Services -->
-    <script src="app/common/services/common.service.js"></script>
+    <script src="app/common/services/common.services.js"></script>
     <script src="app/common/services/dataAccessService.js"></script>
+    <script src="app/common/services/productResourceMock.js"></script>
 
     <!-- Controllers -->
     <script src="app/products/productListController.js"></script>
+    <script src="app/products/productDetailController.js"></script>
 </body>
 
 </html>

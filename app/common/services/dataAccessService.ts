@@ -20,6 +20,6 @@ module app.common {
         }
     }
 
-    angular.module("common.service").service("dataAccessService",DataAccessService);
+    angular.module("common.services").service("dataAccessService",DataAccessService);
 
 }
